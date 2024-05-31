@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgresql-steve.alwaysdata.net/steve_event
+    username: steve_event
+    password: 6Hpc4i!wrGReTmS
