@@ -3,21 +3,21 @@ spring:
     gateway:
       routes:
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: https://jo-user-service-2782f3d3f018.herokuapp.com
           predicates:
             - Path=/users/**
           filters:
             - JwtTokenFilterFactory
 
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: https://jo-auth-service-38e185cc6a7c.herokuapp.com
           predicates:
             - Path=/auth/**
           filters:
             - JwtTokenFilterFactory
 
         - id: event-service
-          uri: lb://EVENT-SERVICE
+          uri: https://jo-event-service-0ecf0045b38e.herokuapp.com
           predicates:
             - Path=/event/**
             - Path=/offertypes/**
@@ -26,48 +26,40 @@ spring:
             - JwtTokenFilterFactory
 
         - id: key-generator-service
-          uri: lb://KEY-GENERATOR-SERVICE
+          uri: https://jo-key-generetor-service-67aff5ae6d48.herokuapp.com
           predicates:
             - Path=/key-generator/**
           filters:
             - JwtTokenFilterFactory
 
         - id: notification-service
-          uri: lb://NOTIFICATION-SERVICE
+          uri: https://jo-notification-service-48e1b7043d33.herokuapp.com
           predicates:
             - Path=/notifications/**
           filters:
             - JwtTokenFilterFactory
 
-        - id: key-generator-service
-          uri: lb://KEY-GENERATOR-SERVICE
-          predicates:
-            - Path=/key-generator/**
-          filters:
-            - JwtTokenFilterFactory
-
         - id: payment-service
-          uri: lb://PAYMENT-SERVICE
+          uri: https://jo-payment-service-c36c53af4676.herokuapp.com
           predicates:
             - Path=/payments/**
           filters:
             - JwtTokenFilterFactory
 
         - id: ticket-service
-          uri: lb://TICKET-SERVICE
+          uri: https://jo-ticket-service-0c6161138f5a.herokuapp.com
           predicates:
             - Path=/tickets/**
           filters:
             - JwtTokenFilterFactory
 
         - id: venue-service
-          uri: lb://VENUE-SERVICE
+          uri: https://jo-venue-service-01ba5601048e.herokuapp.com
           predicates:
             - Path=/venues/**
             - Path=/locations/**
           filters:
             - JwtTokenFilterFactory
-
 
       globalcors:
         corsConfigurations:
@@ -76,3 +68,6 @@ spring:
             allowedMethods: "*"
             allowedHeaders: "*"
             allowCredentials: true
+
+  application:
+    name: gateway-service
